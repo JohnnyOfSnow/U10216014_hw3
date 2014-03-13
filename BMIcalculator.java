@@ -10,4 +10,6 @@ public class BMIcalculator extends JFrame {
 	private JtextField jtfHeight = new JtextField();
 	private JtextField jtfBMI = new JtextField();
 	private JtextField jtfStatus = new JtextField();
+	
+	private JButton jbtComputeBMI = new JButton("Compute result");
 }
