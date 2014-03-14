@@ -54,7 +54,7 @@ public class BMIcalculator extends JFrame {
 		
 		public static void main(String[] args) {
 			BMIcalculator frame = new BMIcalculator();
-			frame.pack();
+			frame.setSize(350,300);
 			frame.setTitle("BMI Calculator");
 			frame.setLocationRelativeTo(null);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
