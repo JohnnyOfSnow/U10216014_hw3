@@ -36,7 +36,7 @@ public class BMIcalculator extends JFrame {
 		add(p2, BorderLayout.SOUTH);
 
 		jbtComputeBMI.addActionListener(new ButtonListener());
-		
+	}
 		private class ButtonListener implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -51,5 +51,13 @@ public class BMIcalculator extends JFrame {
 				jtfStatus.setText(String.format("%3s",myBMI.getStatus()));
 			}
 		}
-	}
+		
+		public static void main(String[] args) {
+			BMIcalculator frame = new BMIcalculator();
+			frame.pack();
+			frame.setTitle("BMI Calculator");
+			frame.setLocationRelative(null);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setVisible(true);
+		}
 }
