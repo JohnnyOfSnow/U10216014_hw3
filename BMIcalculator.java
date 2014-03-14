@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 public class BMIcalculator extends JFrame {
+	// Create JTextField for user to input data.
   	private JTextField jtfName = new JTextField();
 	private JTextField jtfAge = new JTextField();
 	private JTextField jtfWeight = new JTextField();
@@ -11,9 +12,11 @@ public class BMIcalculator extends JFrame {
 	private JTextField jtfBMI = new JTextField();
 	private JTextField jtfStatus = new JTextField();
 
+	// Create JButton to let user click.
 	private JButton jbtComputeBMI = new JButton("Compute result");
 
 	public BMIcalculator() {
+		// Create a JPanel to hold the JTextField and JLabel
 		JPanel p1 = new JPanel(new GridLayout(6,2));
 		p1.add(new JLabel("Name"));
 		p1.add(jtfName);
@@ -29,32 +32,40 @@ public class BMIcalculator extends JFrame {
 		p1.add(jtfStatus);
 		p1.setBorder(new TitledBorder("Enter the name, age, weight, and height."));
 
+		// Create a JPanel to hold the button.
 		JPanel p2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		p2.add(jbtComputeBMI);
 
+		// Place two JPanle in the assigned location.
 		add(p1, BorderLayout.CENTER);
 		add(p2, BorderLayout.SOUTH);
-
+		
+		// set the button event that user click it.
 		jbtComputeBMI.addActionListener(new ButtonListener());
 	}
+		// This class define the action that user click the button.
 		private class ButtonListener implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// Get values from text field.
 				String name = jtfName.getText();
 				int age = Integer.parseInt(jtfAge.getText());
 				double weight = Double.parseDouble(jtfWeight.getText());
 				double height = Double.parseDouble(jtfHeight.getText());
-
+				
+				// Create a myBMI object.
 				BMI myBMI = new BMI(name, age, weight, height);
 
+				// Displar the result(BMI and status).
 				jtfBMI.setText(String.format("%.2f",myBMI.getBMI()));
 				jtfStatus.setText(String.format("%3s",myBMI.getStatus()));
 			}
 		}
 		
 		public static void main(String[] args) {
-			BMIcalculator frame = new BMIcalculator();
-			frame.setSize(350,300);
+			/** Main method */
+			BMIcalculator frame = new BMIcalculator(); // Create a frame.
+			frame.setSize(350,300); // Set the frame size.
 			frame.setTitle("BMI Calculator");
 			frame.setLocationRelativeTo(null);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
