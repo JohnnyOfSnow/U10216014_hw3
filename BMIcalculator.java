@@ -27,7 +27,7 @@ public class BMIcalculator extends JFrame {
 		p1.add(jtfBMI);
 		p1.add(new jLabel("Status"));
 		p1.add(jtfStatus);
-		p1.setBorder(new TitleBorder("Enter the name, age, weight, and height."))
+		p1.setBorder(new TitleBorder("Enter the name, age, weight, and height."));
 
 		JPanel p2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		p2.add(jbtComputeBMI);
