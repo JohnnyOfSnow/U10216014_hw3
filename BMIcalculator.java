@@ -4,30 +4,30 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 public class BMIcalculator extends JFrame {
-  private JtextField jtfName = new JtextField();
-	private JtextField jtfAge = new JtextField();
-	private JtextField jtfWeight = new JtextField();
-	private JtextField jtfHeight = new JtextField();
-	private JtextField jtfBMI = new JtextField();
-	private JtextField jtfStatus = new JtextField();
-	
+  	private JTextField jtfName = new JTextField();
+	private JTextField jtfAge = new JTextField();
+	private JTextField jtfWeight = new JTextField();
+	private JTextField jtfHeight = new JTextField();
+	private JTextField jtfBMI = new JTextField();
+	private JTextField jtfStatus = new JTextField();
+
 	private JButton jbtComputeBMI = new JButton("Compute result");
-	
+
 	public BMIcalculator() {
 		JPanel p1 = new JPanel(new GridLayout(6,2));
-		p1.add(new jLabel("Name"));
+		p1.add(new JLabel("Name"));
 		p1.add(jtfName);
-		p1.add(new jLabel("Age"));
+		p1.add(new JLabel("Age"));
 		p1.add(jtfAge);
-		p1.add(new jLabel("Weight"));
+		p1.add(new JLabel("Weight"));
 		p1.add(jtfWeight);
-		p1.add(new jLabel("Height"));
+		p1.add(new JLabel("Height"));
 		p1.add(jtfHeight);
-		p1.add(new jLabel("BMI"));
+		p1.add(new JLabel("BMI"));
 		p1.add(jtfBMI);
-		p1.add(new jLabel("Status"));
+		p1.add(new JLabel("Status"));
 		p1.add(jtfStatus);
-		p1.setBorder(new TitleBorder("Enter the name, age, weight, and height."));
+		p1.setBorder(new TitledBorder("Enter the name, age, weight, and height."));
 
 		JPanel p2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		p2.add(jbtComputeBMI);
