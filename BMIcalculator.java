@@ -40,7 +40,7 @@ public class BMIcalculator extends JFrame {
 		private class ButtonListener implements ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String name = String.parseString(jtfName.getText());
+				String name = jtfName.getText();
 				int age = Integer.parseInt(jtfAge.getText());
 				double weight = Double.parseDouble(jtfWeight.getText());
 				double height = Double.parseDouble(jtfHeight.getText());
