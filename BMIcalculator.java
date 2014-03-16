@@ -1,3 +1,13 @@
+/**
+ * Name: Johnny
+ * ID: U10216014
+ * Ex: rewrite textbook p.406~407
+ * Information: 
+ *      The exercise can let student learn how to write a UI interface, and event-driven program.
+ *
+ *      The exercise you need to write a UI interface that user can input data, and calculate the
+ *      BMI and body status by clicking the compute BMI button.
+ */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -43,34 +53,35 @@ public class BMIcalculator extends JFrame {
 		// set the button event that user click it.
 		jbtComputeBMI.addActionListener(new ButtonListener());
 	}
-		// This class define the action that user click the button.
-		private class ButtonListener implements ActionListener {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// Get values from text field.
-				String name = jtfName.getText();
-				int age = Integer.parseInt(jtfAge.getText());
-				double weight = Double.parseDouble(jtfWeight.getText());
-				double height = Double.parseDouble(jtfHeight.getText());
+	
+	// This class define the action that user click the button.
+	private class ButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// Get values from text field.
+			String name = jtfName.getText();
+			int age = Integer.parseInt(jtfAge.getText());
+			double weight = Double.parseDouble(jtfWeight.getText());
+			double height = Double.parseDouble(jtfHeight.getText());
 				
-				// Create a myBMI object.
-				BMI myBMI = new BMI(name, age, weight, height);
+			// Create a myBMI object.
+			BMI myBMI = new BMI(name, age, weight, height);
 
-				// Displar the result(BMI and status).
-				jtfBMI.setText(String.format("%.2f",myBMI.getBMI()));
-				jtfStatus.setText(String.format("%3s",myBMI.getStatus()));
-			}
+			// Displar the result(BMI and status).
+			jtfBMI.setText(String.format("%.2f",myBMI.getBMI()));
+			jtfStatus.setText(String.format("%3s",myBMI.getStatus()));
 		}
+	}
 		
-		public static void main(String[] args) {
-			/** Main method */
-			BMIcalculator frame = new BMIcalculator(); // Create a frame.
-			frame.setSize(350,300); // Set the frame size.
-			frame.setTitle("BMI Calculator");
-			frame.setLocationRelativeTo(null);
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setVisible(true);
-		}
+	public static void main(String[] args) {
+		/** Main method */
+		BMIcalculator frame = new BMIcalculator(); // Create a frame.
+		frame.setSize(350,300); // Set the frame size.
+		frame.setTitle("BMI Calculator");
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
 }
 
 class BMI {
